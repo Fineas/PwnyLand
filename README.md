@@ -20,11 +20,8 @@
 cd  $PATH
 git clone git@github.com:Fineas/PwnyLand.git
 
-# build the docker images
+# build the docker image
 ./ubuntu16/build.sh
-./ubuntu18/build.sh
-./ubuntu19/build.sh
-./ubuntu20/build.sh
 
 # add the following lines to ~/.bashrc
 alias pwnu16="$PATH/ubuntu16/stop.sh; $PATH/ubuntu16/start.sh; $PATH/ubuntu16/connect.sh;"
