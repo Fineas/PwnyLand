@@ -4,5 +4,5 @@ sudo docker run --cpuset-cpus="0-$(($(nproc)-1))" --rm --detach  --privileged -i
 	--hostname pwny_land \
 	--name u16 \
 	-v c:/:/SHARED \
-	u16
+	pwny_land
 echo "[+] Started"
