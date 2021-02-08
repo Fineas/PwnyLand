@@ -39,14 +39,13 @@ pwnyland
     Ussage: SCRIPT -b binary_name.elf -l libc.so.6 -ip 127.0.0.1 -p 1337
     ```
 * Compiled Glibc + Loader
-    ```
-    glibc 2.19 with debugging symbols (32bit and 64bit)
-    glibc 2.23 with debugging symbols (32bit and 64bit)
-    glibc 2.24 with debugging symbols (32bit and 64bit)
-    glibc 2.28 with debugging symbols (32bit and 64bit)
-    glibc 2.29 with debugging symbols (32bit and 64bit)
-    glibc 2.30 with debugging symbols (32bit and 64bit)
-    ```
+    - glibc ***2.19*** with debugging symbols (32bit and 64bit)
+    - glibc ***2.23*** with debugging symbols (32bit and 64bit)
+    - glibc ***2.24*** with debugging symbols (32bit and 64bit)
+    - glibc ***2.28*** with debugging symbols (32bit and 64bit)
+    - glibc ***2.29*** with debugging symbols (32bit and 64bit)
+    - glibc ***2.30*** with debugging symbols (32bit and 64bit)
+    
 * Wide variety of tools:
     - [pwntools](https://github.com/Gallopsled/pwntools) ⟶ "CTF framework and exploit development library"
     - [ropper](https://github.com/sashs/Ropper) ⟶ "search for gadgets to build rop chains for different architectures"
