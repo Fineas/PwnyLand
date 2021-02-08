@@ -17,20 +17,20 @@
 ### 🌴 Setup & Ussage:
 ```bash
 # clone the repository
-cd  $PATH
-git clone git@github.com:Fineas/PwnyLand.git
+$> cd  $PATH
+$> git clone git@github.com:Fineas/PwnyLand.git
 
 # change start.sh to mount your own folder in order to have access to CTF files
-docker run -v HOST_FOLDER:/:/GUEST_FOLDER
+$> docker run -v HOST_FOLDER:/:/GUEST_FOLDER
 
 # build the docker image
-./ubuntu/build.sh
+$> ./ubuntu/build.sh
 
 # add the following lines to ~/.bashrc
 alias pwnyland="$PATH/PwnyLand/ubuntu/stop.sh; $PATH/PwnyLand/ubuntu/start.sh; $PATH/PwnyLand/ubuntu/connect.sh;"
 
 # start and connect to a container
-pwnyland
+$> pwnyland
 ```
 
 ### 🌴 Features:
