@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo docker run --cpuset-cpus="0-$(($(nproc)-1))" --rm --detach  --privileged -it  -e "TERM=xterm-256color" \
 	--net=host \
-	--hostname pwny_land \
-	--name u16 \
+	--hostname pwny_land_ubuntu \
+	--name pwny_land \
 	-v c:/:/SHARED \
 	pwny_land
 echo "[+] Started"
