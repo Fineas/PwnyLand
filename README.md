@@ -20,14 +20,17 @@
 cd  $PATH
 git clone git@github.com:Fineas/PwnyLand.git
 
+# change start.sh to mount your own folder in order to have access to CTF files
+docker run -v HOST_FOLDER:/:/GUEST_FOLDER
+
 # build the docker image
-./ubuntu16/build.sh
+./ubuntu/build.sh
 
 # add the following lines to ~/.bashrc
-alias pwnu16="$PATH/ubuntu16/stop.sh; $PATH/ubuntu16/start.sh; $PATH/ubuntu16/connect.sh;"
+alias pwnyland="$PATH/PwnyLand/ubuntu/stop.sh; $PATH/PwnyLand/ubuntu/start.sh; $PATH/PwnyLand/ubuntu/connect.sh;"
 
 # start and connect to a container
-pwnu16
+pwnyland
 ```
 
 ### 🌴 Features:
@@ -35,9 +38,14 @@ pwnu16
     ```
     Ussage: SCRIPT -b binary_name.elf -l libc.so.6 -ip 127.0.0.1 -p 1337
     ```
-* Compiled Glibc and a [Glibc Builder]()
+* Compiled Glibc + Loader
     ```
-    Ussage: ~/tools/glibc/<version> or ~/tools/glibc/builder.py 
+    glibc 2.19 with debugging symbols (32bit and 64bit)
+    glibc 2.23 with debugging symbols (32bit and 64bit)
+    glibc 2.24 with debugging symbols (32bit and 64bit)
+    glibc 2.28 with debugging symbols (32bit and 64bit)
+    glibc 2.29 with debugging symbols (32bit and 64bit)
+    glibc 2.30 with debugging symbols (32bit and 64bit)
     ```
 * Wide variety of tools:
     - [pwntools](https://github.com/Gallopsled/pwntools) ⟶ "CTF framework and exploit development library"
