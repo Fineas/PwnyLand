@@ -59,4 +59,7 @@ $> pwnyland
     - [patchelf](https://github.com/NixOS/patchelf) ⟶ "utility for modifying existing ELF executables and libraries"
     - [binwalk](https://github.com/ReFirmLabs/binwalk) ⟶ "tool for analyzing, reverse engineering, and extracting firmware images"
 
+### 🌴 Preview:
+!["preview"](img/Capture.PNG)
+
 ### 🌴 Contributions:
