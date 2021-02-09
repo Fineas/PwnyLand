@@ -34,7 +34,7 @@ $> pwnyland
 ```
 
 ### 🌴 Features:
-* Automatic binary analyzer and script generation ( more information can be found [here](https://github.com/Fineas/Me-CTF/tree/master/Make%20Exploit) )
+* Automatic binary analyzer and script generator ( more information can be found [here](https://github.com/Fineas/Me-CTF/tree/master/Make%20Exploit) )
     ```
     Ussage: SCRIPT -b binary_name.elf -l libc.so.6 -ip 127.0.0.1 -p 1337
     ```
