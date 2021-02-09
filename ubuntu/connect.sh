@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it pwny_land bash && echo "[+] Connected" && cat header.txt
+cat header.txt && docker exec -it pwny_land_ubuntu bash

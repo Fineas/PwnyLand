@@ -1,2 +1,2 @@
 #!/bin/bash
-docker kill pwny_land >/dev/null && echo "[+] Stopped"
+docker kill pwny_land_ubuntu >/dev/null && echo "[+] Stopped"
