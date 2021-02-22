@@ -24,7 +24,8 @@ RUN apt-get update && apt-get install -y software-properties-common \
 RUN apt-get update && apt-get install -y python2 python2-dev \
     && cd /tmp \
     && wget https://bootstrap.pypa.io/2.7/get-pip.py \
-    && python2 get-pip.py
+    && python2 get-pip.py \
+    && ln -sfn /usr/bin/pip /usr/local/lib/python2.7/dist-packages/pip
 
 RUN apt-get update && apt-get install -y python3.6 python3.6-dev python3-pip
 
@@ -62,6 +63,9 @@ RUN apt-get install -y ruby ruby-dev \
 
 # install nasm
 RUN apt-get install nasm
+
+# jinja2
+RUN pip3 install jinja2
 
 # install pwntools & ropper & one_gadget
 RUN pip install pwntools
@@ -114,8 +118,8 @@ RUN git clone https://github.com/longld/peda.git ./peda \
 RUN mkdir /root/tools/make_exploit \
     && cd /root/tools/make_exploit \
     && wget https://raw.githubusercontent.com/Fineas/Me-CTF/master/Make%20Exploit/solve_binaries.py \
-    && wget https://raw.githubusercontent.com/Fineas/Me-CTF/master/Make%20Exploit/generate_script.py \
-    && echo "alias SCRIPT=\"python ~/tools/make_exploit/generate_script.py\"" >> ~/.bashrc
+    && wget https://raw.githubusercontent.com/Fineas/Me-CTF/master/Make%20Exploit/generate_exploit.py \
+    && echo "alias SCRIPT=\"python3 ~/tools/make_exploit/generate_exploit.py\"" >> ~/.bashrc
 
 # Libc
 RUN mkdir /root/tools/glibc
