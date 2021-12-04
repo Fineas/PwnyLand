@@ -21,23 +21,24 @@ RUN apt-get update && apt-get install -y software-properties-common \
     && add-apt-repository ppa:deadsnakes/ppa \
     && apt-add-repository universe \
     && apt-get update
-RUN apt-get update && apt-get install -y python2 python2-dev \
-    && cd /tmp \
-    && wget https://bootstrap.pypa.io/2.7/get-pip.py \
-    && python2 get-pip.py \
-    && ln -sfn /usr/bin/pip /usr/local/lib/python2.7/dist-packages/pip
+RUN apt-get update && apt-get install -y python2 python2-dev
 
 RUN apt-get update && apt-get install -y python3.6 python3.6-dev python3-pip
 
 RUN ln -sfn /usr/bin/python3.6 /usr/bin/python3 && ln -sfn /usr/bin/python2 /usr/bin/python
 
-RUN pip install --upgrade "pip < 21.0"
-RUN pip install setuptools
+RUN pip3 install --upgrade pip
+RUN pip3 install setuptools
 
 RUN apt-get update
 
-RUN pip3 install --upgrade pip
-RUN pip3 install setuptools
+RUN cd /tmp \
+    && wget https://bootstrap.pypa.io/pip/2.7/get-pip.py \
+    && python2 get-pip.py \
+    && ln -sfn /usr/bin/pip /usr/local/lib/python2.7/dist-packages/pip
+
+RUN pip install --upgrade "pip < 21.0"
+RUN pip install setuptools
 
 RUN apt update \
     && apt -y install --no-install-recommends gcc-multilib g++-multilib \
@@ -68,9 +69,13 @@ RUN apt-get install nasm
 RUN pip3 install jinja2
 
 # install pwntools & ropper & one_gadget
-RUN pip install pwntools
-RUN pip3 install pwntools
+# RUN pip install pwntools
+RUN pip install https://github.com/Gallopsled/pwntools/archive/refs/tags/4.8.0beta0.zip
+# RUN pip3 install pwntools
+RUN pip3 install https://github.com/Gallopsled/pwntools/archive/refs/tags/4.8.0beta0.zip
 RUN pip install ropper
+RUN pip3 install ropper
+RUN pip install pathlib2 & pip3 install pathlib2 
 RUN pip install one_gadget
 RUN gem install one_gadget
 
@@ -112,7 +117,6 @@ RUN git clone https://github.com/longld/peda.git ./peda \
     && echo "angelheap.init_angelheap()" >> ~/.gdbinit \
     && echo "end" >> ~/.gdbinit \
     && echo "end" >> ~/.gdbinit
-
 
 # Exploit Template
 RUN mkdir /root/tools/make_exploit \

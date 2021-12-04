@@ -1,2 +1,2 @@
 #/bin/bash
-docker build . -t pwny_land
+docker build . -t pwny_land --no-cache
